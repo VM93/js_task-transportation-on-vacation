@@ -8,8 +8,11 @@ function calculateRentalCost(days) {
   const rent = 40;
   let amount = rent * days;
 
-  days >= 3 && days <= 6 && (amount -= 20);
-  days > 6 && (amount -= 50);
+  if (days > 6) {
+    amount -= 50;
+  } else if (days >= 3) {
+    amount -= 20;
+  }
 
   return amount;
 }
